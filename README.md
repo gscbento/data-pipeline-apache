@@ -1,14 +1,28 @@
-# Projeto: Pipeline de Dados de API para Data Lake com Apache NiFi
-## Objetivo
-Criar um fluxo de dados que:
-- Consulta periodicamente uma API pública (ex: dados climáticos, financeiros ou de COVID).
-- Faz transformações no dado (limpeza, filtragem, enriquecimento).
-- Salvar os dados no formato CSV ou JSON em um Data Lake (ex: AWS S3, GCP Cloud Storage, ou localmente).
+🛠️ Projeto: Pipeline de Engenharia de Dados com Apache NiFi, PostgreSQL e Metabase
 
-(Opcional) Envia um alerta por e-mail ou Slack quando certos critérios forem atendidos.
+Este projeto é um pipeline de dados completo que utiliza Apache NiFi para ingestão e transformação de dados públicos, PostgreSQL como banco de dados relacional para armazenamento e Metabase como ferramenta de visualização interativa.
+🔧 Tecnologias utilizadas
 
-Ferramentas
-Apache NiFi
-API REST pública (por exemplo, OpenWeather, Brasil.IO, ou CoinGecko)
-Destino: armazenamento local, Amazon S3, ou Google Cloud Storage
-Processadores comuns: InvokeHTTP, ExtractText, ConvertRecord, PutFile, PutS3Object, RouteOnAttribute, UpdateAttribute
+    Apache NiFi: Para orquestração e automação do fluxo de dados.
+
+    PostgreSQL: Armazenamento estruturado dos dados processados.
+
+    Metabase: Visualização e análise dos dados com dashboards.
+
+    Docker & Docker Compose: Para orquestrar e isolar os serviços em containers.
+
+⚙️ Objetivo
+
+Demonstrar um fluxo típico de engenharia de dados que simula um ambiente real, usando dados públicos (ex: IBGE, dados.gov.br, etc), extraídos, tratados e carregados em um banco relacional, com visualizações construídas a partir desses dados.
+📦 Estrutura do projeto
+
+/
+├── docker-compose.yml      # Orquestra os serviços
+├── nifi/                   # Configurações e templates do NiFi
+├── scripts/                # Scripts de ETL ou transformação
+├── sql/                    # Criação de tabelas e consultas
+├── metabase/               # Configs ou dashboards (opcional)
+└── README.md               # Documentação do projeto
+
+🚀 Como rodar o projeto
+docker-compose up -d
