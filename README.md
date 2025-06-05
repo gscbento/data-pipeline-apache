@@ -16,13 +16,6 @@ Este projeto é um pipeline de dados completo que utiliza Apache NiFi para inges
 Demonstrar um fluxo típico de engenharia de dados que simula um ambiente real, usando dados públicos (ex: IBGE, dados.gov.br, etc), extraídos, tratados e carregados em um banco relacional, com visualizações construídas a partir desses dados.
 ##📦 Estrutura do projeto
 
-/
-├── docker-compose.yml      # Orquestra os serviços
-├── nifi/                   # Configurações e templates do NiFi
-├── scripts/                # Scripts de ETL ou transformação
-├── sql/                    # Criação de tabelas e consultas
-├── metabase/               # Configs ou dashboards (opcional)
-└── README.md               # Documentação do projeto
 
 ## Como rodar o projeto
 docker-compose up -d
