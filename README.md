@@ -3,7 +3,14 @@
 Este projeto é um pipeline de dados completo que utiliza Apache NiFi para ingestão e transformação de dados públicos, PostgreSQL como banco de dados relacional para armazenamento e Metabase como ferramenta de visualização interativa.
 ## Tecnologias utilizadas
 
+# Diagrama
+![Diagrama](https://github.com/user-attachments/assets/8ef2e76d-2c69-43e2-b3d4-f7120a7350c8)
+
+
+
     Apache NiFi: Para orquestração e automação do fluxo de dados.
+
+    Pentaho:  Integração e transformação dos dados para preparação e carregamento.
 
     PostgreSQL: Armazenamento estruturado dos dados processados.
 
