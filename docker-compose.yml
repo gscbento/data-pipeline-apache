@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  nifi:
+    image: apache/nifi:latest
+    container_name: nifi
+    ports:
+      - "8443:8443" 
+    volumes:
+      - nifi_data:/opt/nifi/nifi-current/data
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:13
+    container_name: postgres
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mydatabase
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  metabase:
+    image: metabase/metabase:latest
+    container_name: metabase
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+volumes:
+  nifi_data:
+  postgres_data:
