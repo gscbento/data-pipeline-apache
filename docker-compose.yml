@@ -21,6 +21,7 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      - ./init-scripts:/docker-entrypoint-initdb.d
     restart: unless-stopped
 
   metabase:
@@ -32,6 +33,18 @@ services:
       - postgres
     restart: unless-stopped
 
+  pentaho:
+    image: hitachivantara/pentaho-server:latest
+    container_name: pentaho
+    ports:
+      - "8080:8080"
+    volumes:
+      - pentaho_data:/pentaho/data
+    restart: unless-stopped
+    depends_on:
+      - postgres
+
 volumes:
   nifi_data:
   postgres_data:
+  pentaho_data:
